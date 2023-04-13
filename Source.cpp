@@ -6,6 +6,9 @@
 
 using namespace std;
 
+
+ //    Task #4
+
 string chooseWord(vector<string> words)
 {
     srand(time(NULL));
@@ -103,3 +106,89 @@ void main() {
     displayStats(startTime, incorGuessCount, word, guessedLetters);
 
 }
+
+ //    Task #1
+
+  /*
+  
+
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+class FileManager {
+public:
+    void createFile(string filename, string content) {
+        ofstream file(filename);
+        if (file.is_open()) {
+            file << content;
+            cout << "File created successfully." << endl;
+        }
+        else {
+            cout << "Error creating file." << endl;
+        }
+        file.close();
+    }
+
+    void deleteFile(string filename) {
+        if (remove(filename.c_str()) != 0) {
+            cout << "Error deleting file." << endl;
+        }
+        else {
+            cout << "File deleted successfully." << endl;
+        }
+    }
+
+    void renameFile(string oldFilename, string newFilename) {
+        if (rename(oldFilename.c_str(), newFilename.c_str()) != 0) {
+            cout << "Error renaming file." << endl;
+        }
+        else {
+            cout << "File renamed successfully." << endl;
+        }
+    }
+
+    void copyFile(string oldFilename, string newFilename) {
+        ifstream src(oldFilename, ios::binary);
+        ofstream dst(newFilename, ios::binary);
+        if (src.is_open() && dst.is_open()) {
+            dst << src.rdbuf();
+            cout << "File copied successfully." << endl;
+        }
+        else {
+            cout << "Error copying file." << endl;
+        }
+        src.close();
+        dst.close();
+    }
+};
+
+void main() {
+    FileManager fileManager;
+    fileManager.createFile("File.txt", "Text 123");
+    cout << endl;
+    fileManager.renameFile("File.txt", "newfile.txt");
+    cout << endl;
+    fileManager.copyFile("newfile.txt", "Copied.txt");
+    cout << endl;
+    int k;
+    cout << "If you want to delete file please choose:\n1.Main file\t2.Copied file\t3. Exit\n";
+    cin >> k;
+    switch (k)
+    {
+    case 1:
+        fileManager.deleteFile("newfile.txt");
+        break;
+    case 2:
+        fileManager.deleteFile("Copied.txt");
+        break;
+    case 3:
+        exit(1);
+    default:
+        cout << "Error!";
+        break;
+    }
+
+}   */
